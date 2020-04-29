@@ -1,4 +1,5 @@
 # action.yml
+# https://help.github.com/en/actions/building-actions/metadata-syntax-for-github-actions#runsentrypoint
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
