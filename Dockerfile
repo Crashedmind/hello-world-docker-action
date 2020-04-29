@@ -1,7 +1,7 @@
 # Container image that runs your code
 FROM ubuntu:latest
 
-mkdir -p /usr/share/man/man1 \ 
+RUN mkdir -p /usr/share/man/man1 \ 
   && apt-get update \
   && apt-get install -y \
     wget \
@@ -21,7 +21,7 @@ mkdir -p /usr/share/man/man1 \
   && mv ./plantuml.jar /usr/share/plantuml/ \
   && rm -rf /var/lib/apt/lists/* 
 
-  pip3 install --no-cache --upgrade  sphinxcontrib.yt  sphinxcontrib-confluencebuilder
+  RUN pip3 install --no-cache --upgrade  sphinxcontrib.yt  sphinxcontrib-confluencebuilder
 
   # since plantuml url is not the final file location, we need to explicitly save the file as "plantuml.jar" 
   # it would save as file "download" if we didn't         
